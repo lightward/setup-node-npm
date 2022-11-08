@@ -1,7 +1,5 @@
 name: setup-node-npm
 description: Installs node and npm using versions specified in package.json
-inputs:
-outputs:
 runs:
   using: composite
   steps:
