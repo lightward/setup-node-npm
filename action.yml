@@ -8,9 +8,11 @@ runs:
       run: |
         echo "node=$(jq -r .engines.node ./package.json)" >> $GITHUB_OUTPUT
         echo "npm=$(jq -r .engines.npm ./package.json)" >> $GITHUB_OUTPUT
+      shell: bash
     - name: Install node
       uses: actions/setup-node@v3
       with:
         node-version: "${{steps.versions.outputs.node}}"
     - name: Install npm
       run: "npm install -g npm@${{steps.versions.outputs.npm}}"
+      shell: bash
